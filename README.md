@@ -31,7 +31,7 @@ O objetivo principal é praticar **Django**, o uso de **Formulários**, o consum
 
 | Funcionalidade      | Descrição                                                                 |
 |---------------------|---------------------------------------------------------------------------|
-| `Adicionar País`    | Usuário digit o nome do país e a API completa os dados                   |
+| `Adicionar País`    | Usuário digita o nome do país e a API completa os dados                   |
 | `Listar Países`     | Exibe todos os países cadastrados no banco de dados                       |
 | `Visualizar Detalhes` | Mostra informações detalhadas de cada país                               |
 | `Excluir País`      | Remove o país selecionado do banco                                        |
