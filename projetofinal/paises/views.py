@@ -1,7 +1,7 @@
 from django.shortcuts import render
-from .models import Pais, Idioma 
+from .models import Pais, Idioma
 from .forms import PaisForm
-from django.views.generic import FormView, DetailView, DeleteView, ListView
+from django.views.generic import ListView, FormView, DeleteView, DetailView
 from django.urls import reverse_lazy
 import requests
 
