@@ -31,11 +31,13 @@ class PaisFormView(FormView):
 
                 idiomas = pais_info.get("languages", {})
                 idioma_nome = list(idiomas.values())[0] 
+                nome_comum = pais_info.get("name", {}).get("common")
+
 
                 idioma_obj, _ = Idioma.objects.get_or_create(nome=idioma_nome)
 
                 pais_obj, created = Pais.objects.update_or_create(
-                nome_oficial=nome_oficial,
+                nome_oficial=nome_comum,
                 defaults={
                     "nome_oficial": pais_info.get("name", {}).get("official"),
                     "capital": pais_info.get("capital", ["Desconhecida"])[0],
