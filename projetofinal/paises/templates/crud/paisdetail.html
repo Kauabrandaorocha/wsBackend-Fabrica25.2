@@ -1,0 +1,15 @@
+{% extends "entrada.html" %}
+
+{% block title %}Detalhes do País{% endblock %}
+
+{% block content %}
+    <h2>Detalhes de {{ pais.nome_oficial }}</h2>
+    <p><strong>Capital:</strong> {{ paises.capital }}</p>
+    <p><strong>Região:</strong> {{ paises.regiao }}</p>
+    <p><strong>Sub-região:</strong> {{ paises.subregiao }}</p>
+    <p><strong>Idioma:</strong> {{ paises.idioma }}</p>
+    <p><strong>População:</strong> {{ paises.populacao }}</p>
+    <p><strong>Área:</strong> {{ paises.area }} km²</p>
+    <br>
+    <a href="{% url 'lista_pais' %}">← Voltar para a lista</a>
+{% endblock %}

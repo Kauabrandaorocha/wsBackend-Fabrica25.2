@@ -1,0 +1,12 @@
+{% extends "entrada.html" %}
+
+{% block title %}Buscar País{% endblock %}
+
+{% block content %}
+    <h2>Buscar País</h2>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Buscar e Salvar</button>
+    </form>
+{% endblock %}

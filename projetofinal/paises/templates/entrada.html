@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Sistema de Países{% endblock %}</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+
+        header {
+            background-color: #0077cc;
+            color: white;
+            padding: 30px 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 40px auto;
+            background-color: white;
+            padding: 30px;
+            border-radius: 8px;
+        }
+
+        a.button-link {
+            display: inline-block;
+            padding: 12px 24px;
+            background-color: #0077cc;
+            color: white;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 16px;
+            margin-top: 20px;
+        }
+
+        a.button-link:hover {
+            background-color: #005fa3;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Sistema de Gerenciamento de Países</h1>
+    </header>
+
+    <div class="container">
+        <a href="{% url 'form_pais' %}" class="button-link">Cadastrar Novo País</a>
+
+        {% block content %}{% endblock %}
+    </div>
+
+</body>
+</html>

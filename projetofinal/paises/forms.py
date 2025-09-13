@@ -4,4 +4,4 @@ from .models import Pais
 class PaisForm(forms.ModelForm):
     class Meta:
         model = Pais
-        fields = ['nome_oficial', 'capital', 'regiao', 'subregiao', 'idioma', 'populacao', 'area']
+        fields = ['nome_oficial']

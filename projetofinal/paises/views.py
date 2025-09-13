@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .models import Pais 
+from .models import Pais, Idioma 
 from .forms import PaisForm
 from django.views.generic import FormView, DetailView, DeleteView, ListView
 from django.urls import reverse_lazy
@@ -17,7 +17,7 @@ class PaisListView(ListView):
 class PaisFormView(FormView):
     template_name = 'crud/paisform.html'
     form_class = PaisForm
-    success_url = reverse_lazy('listar_pais')
+    success_url = reverse_lazy('lista_pais')
 
     def form_valid(self, form):
         nome_oficial = form.cleaned_data['nome_oficial'].replace("-", "").strip() 
@@ -26,27 +26,35 @@ class PaisFormView(FormView):
 
         if response.status_code == 200:
             data = response.json()
-            if "erro" not in data:
+            if data:
+                pais_info = data[0]
+
+                idiomas = pais_info.get("languages", {})
+                idioma_nome = list(idiomas.values())[0] 
+
+                idioma_obj, _ = Idioma.objects.get_or_create(nome=idioma_nome)
+
                 pais_obj, created = Pais.objects.update_or_create(
-                    nome_oficial=nome_oficial,
-                    defaults={
-                        "nome_oficial": data.get("nome_oficial"),
-                        "capital": data.get("capital"), 
-                        "regiao": data.get("regiao"), 
-                        "subregiao": data.get("subregiao"), 
-                        "idioma": data.get("idioma"), 
-                        "populacao": data.get("populacao"), 
-                        "area": data.get("area")
-                    }
-                )
+                nome_oficial=nome_oficial,
+                defaults={
+                    "nome_oficial": pais_info.get("name", {}).get("official"),
+                    "capital": pais_info.get("capital", ["Desconhecida"])[0],
+                    "regiao": pais_info.get("region", "Desconhecida"),
+                    "subregiao": pais_info.get("subregion", "Desconhecida"),
+                    "idioma": idioma_obj,
+                    "populacao": pais_info.get("population", 0),
+                    "area": pais_info.get("area", 0.0)
+                }
+            )
             else:
                 form.add_error("nome_oficial", "País não encontrado pela API do REST Countries.")
                 return self.form_invalid(form)
-
         else:
-            form.add_error("nome_oficial", "Nome do país não encontrado.")
+            form.add_error("nome_oficial", "Erro ao consultar a API.")
+            return self.form_invalid(form)
 
         return super().form_valid(form)
+
     
 class PaisDetailView(DetailView):
     model = Pais
@@ -56,4 +64,4 @@ class PaisDetailView(DetailView):
 class PaisDeleteView(DeleteView):
     model = Pais
     template_name = 'crud/paisdelete.html'
-    success_url = reverse_lazy('listar_pais')
+    success_url = reverse_lazy('lista_pais')

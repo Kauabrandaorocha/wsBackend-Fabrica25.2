@@ -1,0 +1,22 @@
+{% extends "entrada.html" %}
+{% block title %}Países Salvos{% endblock %}
+{% block content %}
+    <h2>Lista de Países Pesquisados</h2>
+
+    <ul>
+        {% for pais in paises %}
+            <li>
+                {{ pais.nome_oficial }}
+                — <a href="{% url 'detalhe_pais' pk=pais.pk %}">Ver Detalhes</a>
+                | <a href="{% url 'deleta_pais' pk=pais.pk %}" onclick="return confirm('Tem certeza que deseja excluir {{ pais.nome_oficial }}?')">Excluir</a>
+            </li>
+        {% empty %}
+            <li>Nenhum país cadastrado ainda.</li>
+        {% endfor %}
+    </ul>
+
+    <br>
+    <a href="{% url 'form_pais' %}">
+        <button>Pesquisar Novo País</button>
+    </a>
+{% endblock %}
