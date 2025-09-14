@@ -112,8 +112,6 @@ Verifique se o Python está instalado:
 python --version
 ```
 
-👉 [Download do Python](https://www.python.org/downloads/)
-
 ### 3. PostgreSQL
 
 Usamos o PostgreSQL como banco de dados.
