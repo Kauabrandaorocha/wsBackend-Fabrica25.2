@@ -12,7 +12,7 @@ Este projeto é uma aplicação web simples que permite:
 - Consultar automaticamente as informações detalhadas sobre o país através da API pública **REST Countries**.
 - Listar, detalhar e excluir países salvos no banco de dados.
 
-O objetivo principal é praticar **Django**, o uso de **Formulários**, o consumo de **APIs externas**, e a organização do código segundo os padrões **MVC/MVT**.
+O objetivo principal é praticar **Django**, o uso de **Formulários**, o consumo de **APIs externas**, e a organização do código seguindo o padrão **MVT**.
 
 ---
 
