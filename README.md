@@ -96,13 +96,15 @@ Antes de rodar o projeto, você precisa instalar:
 Clone o repositório:
 
 ```bash
-git clone https://github.com/seu-usuario/seu-repositorio.git
-cd seu-repositorio
+git clone https://github.com/Kauabrandaorocha/wsBackend-Fabrica25.2.git
+cd wsBackend-Fabrica25.2
 ```
 
 ---
 
 ### 2. Python
+
+👉 [Download do Python](https://www.python.org/downloads/)
 
 Verifique se o Python está instalado:
 
