@@ -211,7 +211,7 @@ Abra o arquivo settings.py e adicione o nome do seu app, por exemplo:
 INSTALLED_APPS = [
     ...
     'paises',
-    'rest_framework',  # se usar DRF
+    'rest_framework',  # se usar DRF(Django Rest Framework)
 ]
 ```
 
