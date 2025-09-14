@@ -40,7 +40,7 @@ O objetivo principal é praticar **Django**, o uso de **Formulários**, o consum
 
 ## 🌐 Sobre a API Utilizada
 
-Usamos a [REST Countries API](https://restcountries.com/) para obter as seguintes informações a partir do **nome oficial** do país:
+Usei a [REST Countries API](https://restcountries.com/) para obter as seguintes informações a partir do **nome oficial** do país:
 
 - Nome Oficial e Nome Comum
 - Capital
