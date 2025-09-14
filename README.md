@@ -265,6 +265,11 @@ http://127.0.0.1:8000/admin/
 ```bash
 pip install -r requirements.txt
 ```
+- Se não tiver um arquivo requirements.txt, realize o seguinte comando:
+
+```bash
+pip freeze > requirements.txt
+```
 
 ---
 
