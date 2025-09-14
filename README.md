@@ -172,7 +172,7 @@ venv\Scripts\activate
 source venv/bin/activate
 ```
 
-### 3.Instale o Django, Django REST Framework, Requests e outras dependências principais:
+### 3. Instale o Django, Django REST Framework, Requests e outras dependências principais:
 
 ```bash
 pip install django djangorestframework requests psycopg2-binary
@@ -186,7 +186,7 @@ pip install django djangorestframework requests psycopg2-binary
 - `psycopg2-binary` - driver para PostgreSQL
 
 
-### 4.Criar o projeto Django (se ainda não criou):
+### 4. Criar o projeto Django (se ainda não criou):
 
 - Se você recebeu o código pronto, pode pular, mas se for começar do zero:
 
@@ -195,7 +195,7 @@ django-admin startproject nome_do_projeto
 cd nome_do_projet
 ```
 
-### 5.Criar o app Django (se ainda não criou):
+### 5. Criar o app Django (se ainda não criou):
 
 - Dentro do projeto, crie o app que vai conter seu CRUD:
 
